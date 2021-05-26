@@ -1,8 +1,6 @@
-import pymysql
-conn=pymysql.connect(user="root",password=" ",host="localhost",db="saveRating.php")
-b=conn.cursor()
-query='select*from item_rating;'
-r=b.execute(query)
-data=b.fetchall()
-print(data)
-
+import mysql.connector
+mydb=mysql.connector.connect(host="localhost",user="localhost",passwd="")
+mycursor=mydb.cursor()
+mycursor.execute("show database")
+for i in mycursor:
+    print(i)
